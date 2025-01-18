@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pazar Kafe Menü</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2f0c0c;
+            color: #fff;
+            line-height: 1.6;
+            padding: 40px;
+        }
+
+        .menu-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            color: #333;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .menu-container h1 {
+            margin-bottom: 20px;
+            color: #1b1b1b;
+        }
+
+        .menu-buttons {
+            margin-bottom: 20px;
+        }
+
+        .menu-buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1db395;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .menu-buttons button:hover {
+            background-color: #4315a7;
+        }
+
+        .menu-section {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .menu-section.active {
+            display: block;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .menu-item div {
+            flex-grow: 1;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .menu-item span {
+            color: #555;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.menu-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Pazar Kafe Menü</h1>
+
+        <div class="menu-buttons">
+            <button onclick="showSection('yemekler')">Yemekler</button>
+            <button onclick="showSection('icecekler')">İçecekler</button>
+            <button onclick="showSection('aperatifler')">Aperatifler</button>
+        </div>
+
+        <div id="yemekler" class="menu-section active">
+            <h2>Yemekler</h2>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Izgara Köfte">
+                <div>
+                    <strong>Izgara Köfte</strong>
+                    <p>Lezzetli ve sağlıklı ızgara köfte.</p>
+                </div>
+                <span>₺50</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Karışık Pizza">
+                <div>
+                    <strong>Karışık Pizza</strong>
+                    <p>Taze malzemelerle hazırlanan pizza.</p>
+                </div>
+                <span>₺60</span>
+            </div>
+        </div>
+
+        <div id="icecekler" class="menu-section">
+            <h2>İçecekler</h2>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Çay">
+                <div>
+                    <strong>Çay</strong>
+                    <p>Sıcak ve taze demleme çay.</p>
+                </div>
+                <span>₺10</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Kahve">
+                <div>
+                    <strong>Kahve</strong>
+                    <p>Aromatik ve taze kahve.</p>
+                </div>
+                <span>₺20</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Portakal Suyu">
+                <div>
+                    <strong>Portakal Suyu</strong>
+                    <p>Taze sıkılmış portakal suyu.</p>
+                </div>
+                <span>₺25</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Gazoz">
+                <div>
+                    <strong>Gazoz</strong>
+                    <p>Serinletici ve lezzetli gazoz.</p>
+                </div>
+                <span>₺15</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Limonata">
+                <div>
+                    <strong>Limonata</strong>
+                    <p>Ev yapımı ferah limonata.</p>
+                </div>
+                <span>₺20</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Ayran">
+                <div>
+                    <strong>Ayran</strong>
+                    <p>Soğuk ve taze ayran.</p>
+                </div>
+                <span>₺8</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Soda">
+                <div>
+                    <strong>Soda</strong>
+                    <p>Doğal mineralli maden suyu.</p>
+                </div>
+                <span>₺10</span>
+            </div>
+        </div>
+
+        <div id="aperatifler" class="menu-section">
+            <h2>Aperatifler</h2>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Patates Kızartması">
+                <div>
+                    <strong>Patates Kızartması</strong>
+                    <p>Kızarmış ve çıtır patatesler.</p>
+                </div>
+                <span>₺25</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/80" alt="Soğan Halkası">
+                <div>
+                    <strong>Soğan Halkası</strong>
+                    <p>Çıtır ve sıcak soğan halkaları.</p>
+                </div>
+                <span>₺20</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
